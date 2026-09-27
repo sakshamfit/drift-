@@ -72,7 +72,7 @@ export default function IdentityShowcase() {
         </p>
       </div>
 
-      <div className="identity-reveal relative mt-14 h-[280px] w-screen overflow-hidden sm:h-[340px] md:h-[460px]">
+      <div className="identity-reveal relative mt-14 h-[280px] w-full overflow-hidden sm:h-[340px] md:h-[460px]">
         <CurveBar />
         <div className="flex h-full w-max gap-2 animate-marquee md:gap-3">
           {loopedGallery.map((src, i) => (

@@ -51,11 +51,11 @@ export default function Testimonials() {
   ];
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-24 px-6 md:px-8 lg:px-16 overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-white py-16 px-6 md:px-8 md:py-24 lg:px-16 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-24">
-          <h2 className="test-reveal text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight max-w-2xl font-sans">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-24">
+          <h2 className="test-reveal text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.05] tracking-tight max-w-2xl font-sans">
             Every Pair Tells A <br /> Story Here's Theirs
           </h2>
 
@@ -100,8 +100,8 @@ export default function Testimonials() {
                   “
                 </span>
                 
-                <div className="relative z-10 border-l-2 border-dashed border-gray-300/80 pl-6 ml-4 mt-16 mb-10">
-                  <p className="text-ink/70 text-[17px] leading-[1.8] font-medium tracking-wide">
+                <div className="relative z-10 border-l-2 border-dashed border-gray-300/80 pl-5 ml-3 mt-16 mb-10">
+                  <p className="text-ink/70 text-[15px] sm:text-[17px] leading-[1.8] font-medium tracking-wide">
                     {item.text}
                   </p>
                 </div>

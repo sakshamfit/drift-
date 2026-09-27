@@ -39,8 +39,8 @@ export default function FeaturedProduct() {
   const [activeImage, setActiveImage] = useState(images[0]);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#F9F9F9] py-16 px-4 md:px-8">
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-start">
+    <section ref={sectionRef} className="w-full bg-[#F9F9F9] py-12 px-4 md:px-8 md:py-16">
+      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-10 lg:gap-20 items-center lg:items-start">
         
         {/* Left: Images */}
         <div className="feat-reveal w-full lg:w-1/2 flex flex-col gap-4">
@@ -52,7 +52,7 @@ export default function FeaturedProduct() {
               className="object-cover object-top" 
             />
           </div>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4">
             {images.map((img, idx) => (
               <div 
                 key={idx} 
@@ -71,16 +71,16 @@ export default function FeaturedProduct() {
 
         {/* Right: Details */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center py-4 lg:py-8">
-          <h2 className="feat-reveal text-6xl md:text-7xl font-bold text-ink mb-6 tracking-tight font-sans">
+          <h2 className="feat-reveal text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink mb-6 tracking-tight font-sans">
             Nike Air
           </h2>
           
-          <p className="feat-reveal text-gray-500 text-lg leading-relaxed mb-8 max-w-xl">
+          <p className="feat-reveal text-gray-500 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
             TOMS Aira, Designed For Comfort That Feels As Fresh As The Morning Air Lightweight Canvas, Soft Cushioning, And Effortless Style Made For Days That Move At Your Pace.
           </p>
 
-          <div className="feat-reveal flex items-center gap-6 mb-10">
-            <span className="text-4xl font-bold text-ink">$800.00</span>
+          <div className="feat-reveal flex flex-wrap items-center gap-x-6 gap-y-3 mb-10">
+            <span className="text-3xl sm:text-4xl font-bold text-ink">$800.00</span>
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star 
@@ -123,7 +123,7 @@ export default function FeaturedProduct() {
 
           <div className="feat-reveal mb-10 max-w-xl">
             <h3 className="font-semibold text-lg text-ink mb-4">size Chart</h3>
-            <div className="flex gap-4 items-center">
+            <div className="flex flex-col gap-3 items-stretch sm:flex-row sm:gap-4 sm:items-center">
               <div className="relative flex-1">
                 <select className="w-full h-14 rounded-full border border-gray-300 px-6 text-ink font-medium appearance-none bg-transparent outline-none focus:border-yellow-400 transition-colors cursor-pointer">
                   <option>Size</option>
@@ -144,7 +144,7 @@ export default function FeaturedProduct() {
                 <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" size={20} />
               </div>
 
-              <button className="w-14 h-14 rounded-full bg-[#fceb20] flex items-center justify-center shrink-0 hover:bg-[#e6d61a] transition-colors shadow-sm">
+              <button aria-label="Add to wishlist" className="w-full sm:w-14 h-14 rounded-full bg-[#fceb20] flex items-center justify-center shrink-0 hover:bg-[#e6d61a] transition-colors shadow-sm">
                 <Heart className="text-ink" size={20} />
               </button>
             </div>
