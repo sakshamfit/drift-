@@ -207,22 +207,25 @@ export default function ProductShowcase() {
   }, []);
 
   return (
-    <section id="shop" className="showcase-section relative h-screen w-full bg-white">
-      <div className="grid h-full min-h-0 grid-cols-1 lg:grid-cols-[62%_38%]">
-        <div className="relative flex min-h-0 flex-col bg-white">
+    <section
+      id="shop"
+      className="showcase-section relative w-full bg-white lg:h-screen lg:supports-[height:100dvh]:h-dvh"
+    >
+      <div className="grid grid-cols-1 lg:h-full lg:min-h-0 lg:grid-cols-[62%_38%]">
+        <div className="relative flex h-[68vh] min-h-0 flex-col bg-white lg:h-full">
           <Navbar variant="shop" />
 
-          <div className="relative flex min-h-0 flex-1 items-end justify-center overflow-hidden px-6 py-6 main-img-container">
+          <div className="relative flex min-h-0 flex-1 items-end justify-center overflow-hidden px-5 py-6 main-img-container md:px-6">
             <button
               type="button"
               onClick={prev}
-              className="absolute left-6 top-1/2 z-40 -translate-y-1/2 text-sm font-semibold tracking-wide text-ink/60 transition-colors hover:text-ink md:left-10"
+              className="absolute left-4 top-1/2 z-40 -translate-y-1/2 text-sm font-semibold tracking-wide text-ink/60 transition-colors hover:text-ink md:left-10"
             >
               ‹ PREV
             </button>
 
             {/* Q2 Thumbnail */}
-            <div className="pointer-events-none absolute bottom-6 left-6 z-10 h-[42%] w-[120px]">
+            <div className="pointer-events-none absolute bottom-6 left-4 z-10 h-[38%] w-[88px] md:left-6 md:h-[42%] md:w-[120px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={q2Product.image}
@@ -236,7 +239,7 @@ export default function ProductShowcase() {
             </div>
 
             {/* Q1 Thumbnail */}
-            <div className="pointer-events-none absolute bottom-6 left-[94px] z-20 h-[58%] w-[160px]">
+            <div className="pointer-events-none absolute bottom-6 left-[62px] z-20 h-[52%] w-[116px] md:left-[94px] md:h-[58%] md:w-[160px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={q1Product.image}
@@ -269,14 +272,14 @@ export default function ProductShowcase() {
             <button
               type="button"
               onClick={next}
-              className="absolute right-6 top-1/2 z-40 -translate-y-1/2 text-sm font-semibold tracking-wide text-ink/60 transition-colors hover:text-ink md:right-10"
+              className="absolute right-4 top-1/2 z-40 -translate-y-1/2 text-sm font-semibold tracking-wide text-ink/60 transition-colors hover:text-ink md:right-10"
             >
               NEXT ›
             </button>
           </div>
         </div>
 
-        <div className="relative flex flex-col justify-center overflow-hidden bg-white px-8 py-10 md:px-14">
+        <div className="relative flex flex-col justify-center overflow-hidden bg-white px-6 py-10 md:px-14">
           {/* Video as full bg — multiply blend strips the light studio background */}
           {mounted && (
             <video
@@ -306,7 +309,7 @@ export default function ProductShowcase() {
                 <span className="text-ink/40">({activeProduct.reviews})</span>
               </div>
 
-              <h2 className="mt-3 text-4xl font-bold uppercase leading-[1.05] tracking-tight text-ink md:text-5xl">
+              <h2 className="mt-3 text-3xl font-bold uppercase leading-[1.05] tracking-tight text-ink sm:text-4xl md:text-5xl">
                 {activeProduct.name}
               </h2>
 

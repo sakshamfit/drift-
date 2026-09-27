@@ -135,11 +135,11 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative h-screen w-full overflow-hidden bg-white"
+      className="relative h-screen w-full overflow-hidden bg-white supports-[height:100dvh]:h-dvh"
     >
       <VideoCutout
         src="/videos/hero.mp4"
-        className="absolute inset-0 h-full w-full translate-x-[10%] object-cover"
+        className="absolute inset-0 h-full w-full object-cover md:translate-x-[10%]"
       />
 
       <div ref={contentRef} className="relative z-10 flex h-full flex-col">
@@ -147,16 +147,16 @@ export default function Hero() {
           <Navbar variant="hero" />
         </div>
 
-        <div className="grid flex-1 grid-cols-12 items-center gap-8 px-8 md:px-14">
-            <div className="col-span-12 flex flex-col gap-7 lg:col-span-7">
+        <div className="grid flex-1 grid-cols-12 items-center gap-8 px-5 md:px-14">
+            <div className="col-span-12 flex flex-col gap-5 md:gap-7 lg:col-span-7">
               <div
                 ref={badgeRef}
-                className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold tracking-wider text-ink shadow-neu"
+                className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2 text-[11px] font-semibold tracking-wider text-ink shadow-neu sm:text-xs"
               >
                 NEW DROP <span aria-hidden="true">✦</span>
               </div>
 
-              <h1 className="flex flex-col text-[clamp(3rem,8.5vw,7.25rem)] font-bold leading-[0.92] tracking-tighter text-ink">
+              <h1 className="flex flex-col text-[clamp(2.75rem,13vw,7.25rem)] font-bold leading-[0.92] tracking-tighter text-ink md:text-[clamp(3rem,8.5vw,7.25rem)]">
                 <span className="overflow-hidden">
                   <span ref={line1Ref} className="block">
                     Streetwear.
@@ -252,14 +252,21 @@ export default function Hero() {
             </div>
           </div>
 
-          <div ref={statsRef} className="px-8 pb-8 md:px-14">
-            <div className="flex w-fit divide-x divide-black/10 rounded-3xl bg-white/85 shadow-neu-lg backdrop-blur-sm">
+          <div ref={statsRef} className="px-5 pb-6 md:px-14 md:pb-8">
+            <div className="grid w-full grid-cols-3 divide-x divide-black/10 rounded-3xl bg-white/85 shadow-neu-lg backdrop-blur-sm sm:flex sm:w-fit">
               {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="flex items-center gap-3 px-6 py-4">
-                  <Icon size={18} className="text-ink/70" strokeWidth={1.75} />
-                  <div className="leading-tight">
+                <div
+                  key={label}
+                  className="flex items-center justify-center gap-2 px-2 py-3 sm:gap-3 sm:px-6 sm:py-4"
+                >
+                  <Icon
+                    size={18}
+                    className="hidden text-ink/70 sm:block"
+                    strokeWidth={1.75}
+                  />
+                  <div className="text-center leading-tight sm:text-left">
                     <p className="text-sm font-bold text-ink">{value}</p>
-                    <p className="text-xs text-ink/50">{label}</p>
+                    <p className="text-[11px] text-ink/50 sm:text-xs">{label}</p>
                   </div>
                 </div>
               ))}
